@@ -18,6 +18,7 @@ async function listLabels() {
     keyfilePath: CREDENTIALS_PATH,
   });
 
+  console.log(auth)
   // Create a new Gmail API client.
   const gmail = google.gmail({version: 'v1', auth});
   //Get list of messages
