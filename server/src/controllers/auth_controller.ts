@@ -1,4 +1,4 @@
-import credentials from '../credentials.json';
+import credentials from '../../credentials.json';
 import {google} from 'googleapis'
 import http, { IncomingMessage, ServerResponse } from "http";
 import open from "open";
