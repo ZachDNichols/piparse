@@ -6,4 +6,7 @@
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<div class="flex flex-col items-center">
+    <h1 class="font-bold size-4">PiParser</h1>
+</div>
 {@render children()}
