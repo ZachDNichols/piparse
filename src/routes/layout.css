@@ -1,1 +1,11 @@
 @import 'tailwindcss';
+
+@font-face {
+    font-family: "Mustica Pro";
+    font-style: normal;
+    src: url("../lib/assets/MusticaPro-SemiBold.otf") format("opentype");
+}
+
+@theme {
+    --font-default: "Mustica Pro", sans-serif;
+}
