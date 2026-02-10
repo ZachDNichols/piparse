@@ -61,4 +61,6 @@ http-client.private.env.json
 .idea/vcs.xml
 .idea/modules.xml
 .idea/**/Project_Default.xml
-
+idea/*
+!.idea/runConfigurations/
+!.idea/codeStyles/

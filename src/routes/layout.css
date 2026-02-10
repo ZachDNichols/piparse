@@ -9,3 +9,10 @@
 @theme {
     --font-default: "Mustica Pro", sans-serif;
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #16161e;
+        height: 100%;
+    }
+}
