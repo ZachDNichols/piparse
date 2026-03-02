@@ -33,12 +33,25 @@
 				return;
 			}
 
-			submitButton.addEventListener("click", () => {
-				console.log("Submitted email!");
+			submitButton.addEventListener("click", async () => {
+				let request = {
+					email : emailAddress,
+					emailPass : password,
+					imapHost : host
+				};
+
+				const response = await fetch('/add_email', {
+					method: 'POST',
+					body: JSON.stringify(request),
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				});
+
+				console.log(response)
 			})
 
 		});
-
 	});
 </script>
 <div class="flex flex-col mt-4 items-center">
@@ -57,6 +70,6 @@
 			</div>
 		</div>
 		<Input whatFor="host" placeholder="imap.example.com" bind:value={host} label="Host"></Input>
-		<button class="p-4 text-white bg-blue-500 cursor-pointer rounded-lg w-1/3 mt-3 hover:bg-blue-900" id="submit">Submit</button>
+		<button class="p-4 text-white bg-blue-500 cursor-pointer rounded-lg w-1/3 mt-3 hover:bg-blue-900 font-default" id="submit">Submit</button>
 	</div>
 </div>
