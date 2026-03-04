@@ -32,25 +32,6 @@
 			if (submitButton === null) {
 				return;
 			}
-
-			submitButton.addEventListener("click", async () => {
-				let request = {
-					email : emailAddress,
-					emailPass : password,
-					imapHost : host
-				};
-
-				const response = await fetch('/add_email', {
-					method: 'POST',
-					body: JSON.stringify(request),
-					headers: {
-						'Content-Type': 'application/json'
-					}
-				});
-
-				console.log(response)
-			})
-
 		});
 	});
 </script>
@@ -59,17 +40,17 @@
 		<a class="underline" href="https://github.com/ZachDNichols/piparse">contribute to this project</a>
 		to add other options.
 	</h2>
-
-	<div class="w-1/2 flex flex-col items-center mt-2">
-		<Input placeholder="example@example.com" bind:value={emailAddress} label="Email Address" whatFor="username"></Input>
-		<div class="m-2 flex-col flex w-1/2 items-center font-default">
+	<form method="POST" class="w-full flex flex-col items-center mt-2">
+		<Input placeholder="example@example.com" bind:value={emailAddress} label="Email Address" whatFor="email"></Input>
+		<div class="m-2 flex-col flex items-center font-default w-full">
 			<label for="password" class="dark:text-white">Password</label>
-			<div class="w-full flex items-center">
-				<input bind:value={password} id="passwordInput" type="password" placeholder="password" class="w-full dark:text-white border p-0.75dark:border-white rounded-lg dark:outline-blue-300 text-center">
-				<button type="button" id="togglePassword" class="focus:outline-none ml-3 hidden dark:text-white underline cursor-pointer">Show</button>
+			<div class="flex items-center w-1/4">
+				<input bind:value={password} id="passwordInput" name="password" type="password" placeholder="password" class="w-full dark:text-white border p-0.75dark:border-white rounded-lg dark:outline-blue-300 text-center">
+				<button type="button" id="togglePassword" class="focus:outline-none absolute hidden ml-3 mr-0 dark:text-white underline cursor-pointer">Show</button>
 			</div>
 		</div>
 		<Input whatFor="host" placeholder="imap.example.com" bind:value={host} label="Host"></Input>
 		<button class="p-4 text-white bg-blue-500 cursor-pointer rounded-lg w-1/3 mt-3 hover:bg-blue-900 font-default" id="submit">Submit</button>
-	</div>
+	</form>
+
 </div>

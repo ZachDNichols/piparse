@@ -37,7 +37,7 @@
 	},
 	"dependencies": {
 		"googleapis": "^170.1.0",
-		"imap": "^0.8.19",
+		"imapflow": "^1.2.11",
 		"mailparser": "^3.9.3"
 	}
 }
